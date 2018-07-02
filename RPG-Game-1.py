@@ -7,14 +7,30 @@
 # 3. flee
 
 class Hero:
-    def __init__(self)
+    def __init__(self, health, power)
         self.health = 10
         self.power = 5
-class Goblin:
-    def __init__(self, enemy)
+    def attack(self, goblin):
+        goblin.health -= self.power
+        if goblin.health <= 0
+            print("the goblin is dead")
+
+
+class Goblin:      
+    def __init__(self, health, power)
         self.health = 6
         self.power = 2
+    def attack(self, hero):
+        hero.health -= self.power
+        if hero.health <= 0:
+            print("You are dead")
 
+# melissa = Hero(10,2)
+# veronica = Goblin(6,3)
+
+# melissa.attack(veronica)
+
+def main():
     while goblin_health > 0 and hero_health > 0:
         print("You have {} health and {} power.".format(hero_health, hero_power))
         print("The goblin has {} health and {} power.".format(goblin_health, goblin_power))
@@ -27,10 +43,7 @@ class Goblin:
         raw_input = input()
         if raw_input == "1":
             # Hero attacks goblin
-            goblin_health -= hero_power
-            print("You do {} damage to the goblin.".format(hero_power))
-            if goblin_health <= 0:
-                print("The goblin is dead.")
+            hero.attack(goblin)
         elif raw_input == "2":
             pass
         elif raw_input == "3":
@@ -41,9 +54,7 @@ class Goblin:
 
         if goblin_health > 0:
             # Goblin attacks hero
-            hero_health -= goblin_power
-            print("The goblin does {} damage to you.".format(goblin_power))
-            if hero_health <= 0:
+            goblin.attack(hero)
                 print("You are dead.")
 
 main()
