@@ -14,6 +14,8 @@ class Hero:
         goblin.health -= self.power
         if goblin.health <= 0
             print("the goblin is dead")
+    def print_status(self):
+        print("You have {} health and {} power.".format(hero_health, hero_power))
 
 
 class Goblin:      
@@ -31,8 +33,7 @@ class Goblin:
 # melissa.attack(veronica)
 
 def main():
-    while goblin_health > 0 and hero_health > 0:
-        print("You have {} health and {} power.".format(hero_health, hero_power))
+    while goblin.alive() and hero.alive():
         print("The goblin has {} health and {} power.".format(goblin_health, goblin_power))
         print()
         print("What do you want to do?")
