@@ -6,7 +6,12 @@
 # 2. do nothing - in which case the goblin will attack him anyway
 # 3. flee
 
-class Hero:
+class Character:
+    def __init__(self, health, power):
+         self.health = health
+         self.power = power
+
+class Hero(Character):
     def __init__(self, health, power)
         self.health = 10
         self.power = 5
@@ -17,8 +22,7 @@ class Hero:
     def print_status(self):
         print("You have {} health and {} power.".format(hero_health, hero_power))
 
-
-class Goblin:      
+class Goblin(Character):      
     def __init__(self, health, power)
         self.health = 6
         self.power = 2
