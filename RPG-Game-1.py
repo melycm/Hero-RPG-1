@@ -72,6 +72,7 @@ def main():
             enemy.attack(hero)
             hero.print_status()
             enemy.print_status()
-    # 
+        if not enemy.alive():
+            print("The goblin is dead")
 
 main()
